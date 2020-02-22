@@ -22,7 +22,11 @@ or
 # Comments
 
 All controllers and models are autoloaded.
+
 Babel used for controller-based routes(required for decorators)
+
 All tabels has autoincrement id column and created/updated fields by default(nested from db/main.js)
+
 Config for db is in the db/connection.js
+
 Routes are supposed to work as aggregators: you could specify required fields for GET, POST and PUT could update only setted fields
