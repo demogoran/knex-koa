@@ -1,0 +1,26 @@
+{
+  "name": "knexKoa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./app.js localhost 3000",
+    "initdb": "babel-node ./db/initdb.js"
+  },
+  "dependencies": {
+    "@mbraun/koa-decorators": "^0.0.4",
+    "knex": "^0.20.10",
+    "knex-migrate": "^1.7.4",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-router": "^8.0.8",
+    "pg": "^7.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "nodemon": "^2.0.2"
+  }
+}
