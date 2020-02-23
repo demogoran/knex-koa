@@ -96,9 +96,9 @@ class SerialsList {
 
 
 const serialsList = new SerialsList();
-/* cron.schedule('0 * * * *', () => {
-    getAllSerials();
+cron.schedule('0 * * * *', () => {
+    serialsList.getAll();
 });
-getAllSerials(); */
+serialsList.getAll();
 
 export default serialsList;

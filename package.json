@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./app.js localhost 3000",
+    "dev:serv": "nodemon --exec babel-node ./app.js localhost 3000",
+    "dev:client": "cd client&&yarn start",
+    "dev": "concurrently \"yarn dev:serv\" \"yarn dev:client\"",
     "initdb": "babel-node ./db/initdb.js"
   },
   "dependencies": {
@@ -26,6 +28,7 @@
     "@babel/node": "^7.8.4",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   }
 }
