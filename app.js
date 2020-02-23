@@ -2,11 +2,10 @@ import fs from 'fs';
 import Koa from 'koa';
 import Router from 'koa-router';
 import KoaBody from 'koa-body';
+import cors from '@koa/cors';
 
 const app = new Koa();
 const router = new Router();
-
-import test from './src/controllers/User.js';
 
 (async () => {
     // Autoimport models to .ctx
@@ -27,6 +26,7 @@ import test from './src/controllers/User.js';
 
     app
         .use(KoaBody())
+        .use(cors())
         .use(router.routes())
         .use(router.allowedMethods());
 

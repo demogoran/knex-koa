@@ -4,20 +4,20 @@ Small POC for knex/koa arch
 
 # Setup
 
-`npm i`
-or
 `yarn`
 
 then
-
-`npm run dev`
-or
 `yarn dev`
 
 Run one of commands to recreate tables from models(it could wipe all tabels and then create it again)
-`npm run initdb`
-or
 `yarn initdb`
+
+To run client
+`cd client && yarn`
+
+then
+
+`yarn start`
 
 # Comments
 

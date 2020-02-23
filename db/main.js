@@ -20,4 +20,8 @@ export class Main {
     dropTable() {
         return knex.schema.raw(`DROP TABLE IF EXISTS "${this.tableName}" CASCADE`);
     };
+
+    truncateTable() {
+        return knex.schema.raw(`TRUNCATE TABLE "${this.tableName}" CASCADE`);
+    };
 }

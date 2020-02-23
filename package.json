@@ -8,13 +8,18 @@
     "initdb": "babel-node ./db/initdb.js"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "@mbraun/koa-decorators": "^0.0.4",
+    "cheerio": "^1.0.0-rc.3",
     "knex": "^0.20.10",
     "knex-migrate": "^1.7.4",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-router": "^8.0.8",
-    "pg": "^7.18.2"
+    "node-cron": "^2.0.3",
+    "pg": "^7.18.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

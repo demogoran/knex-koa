@@ -1,5 +1,7 @@
 import fs from 'fs';
 
+import knex from './connection';
+
 (async () => {
     const files = fs.readdirSync(`./db/models`);
     const awaitList = files.map(async x => {
@@ -9,6 +11,8 @@ import fs from 'fs';
         await currentTable.createTable()
     });
     await Promise.all(awaitList);
+
+    await knex.schema.raw('CREATE EXTENSION pg_trgm;');
 
     console.log('Created');
     process.exit();
