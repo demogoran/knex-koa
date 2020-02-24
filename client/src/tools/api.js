@@ -1,4 +1,4 @@
-const host = 'http://localhost:3000';
+const host = `http://${process.env.HOST_NAME || 'localhost'}:3000`;
 
 const request = (url, options) => fetch(`${host}${url}`, {
     method: 'POST',
