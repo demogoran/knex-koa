@@ -116,7 +116,7 @@ export default () => {
       <video controls autoPlay className="modal" src={currentVideo}></video>
     </Modal>
 
-    <TextField label="Search" value={str} onChange={(e) => setStr(e.target.valuee)} />
+    <TextField label="Search" value={str} onChange={(e) => setStr(e.target.value)} />
 
 
     <Button
