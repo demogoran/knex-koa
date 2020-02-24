@@ -67,6 +67,7 @@ class SerialsList {
         const $ = cheerio.load(doc);
 
         const seasonsList = $('.pgs-seaslist .act a').get().map(x => ({
+            id: $(x).attr('href').split('-')[1],
             url: $(x).attr('href'),
             name: $(x).text().replace('>>>', '').trim().replace(/\s\s+/g, ' ')
         }));

@@ -4,7 +4,7 @@ Small POC for knex/koa arch
 
 # Setup
 
-`yarn`
+`yarn && cd client && yarn`
 
 then
 `yarn dev`

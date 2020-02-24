@@ -9,3 +9,13 @@
   transform: translate(-50%, -50%);
   position: absolute;
 }
+
+.MuiButtonBase-root.submit {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.MuiListItem-button.visited {
+  background-color: #9c9c9cb0;
+  outline: 1px solid white;
+}
