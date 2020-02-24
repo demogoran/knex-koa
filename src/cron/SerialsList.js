@@ -76,7 +76,12 @@ class SerialsList {
     }
 
     async getPlaylist(url) {
-        const doc = await request(`http://seasonvar.ru${url}`);
+        const doc = await request({
+            url: `http://seasonvar.ru${url}`,
+            headers: {
+                //'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+            }
+        });
         const $ = cheerio.load(doc);
 
         const json = $('script:contains(data4play)').html()
@@ -84,7 +89,10 @@ class SerialsList {
             .replace(/'/g, '"')
             .trim();
 
-        const { secureMark } = JSON.parse(json);
+
+
+        //const { secureMark } = JSON.parse(json);
+        const secureMark = 'ae8fdca473817629ab6ef09387f5cc0a';
         const translate = url.split('-')[1];
 
         const playlistURL = `http://seasonvar.ru/playls2/${secureMark}/trans/${translate}/plist.txt?time=${Date.now()}`;
