@@ -1,9 +1,13 @@
+import upsert from 'knex-upsert';
 import knex from './connection';
 
 export class Main {
     constructor() {
         this.tableName = this.constructor.name.toLowerCase();
-        this.knex = knex(this.tableName);
+    }
+
+    get knex() {
+        return knex(this.tableName);
     }
 
     createTable(addFields = () => { }) {
@@ -24,4 +28,17 @@ export class Main {
     truncateTable() {
         return knex.schema.raw(`TRUNCATE TABLE "${this.tableName}" CASCADE`);
     };
+
+
+
+    upsert(datatosave, interField = '_id') {
+        return Promise.all(datatosave.map(item => {
+            return upsert({
+                db: knex,
+                table: this.tableName,
+                object: item,
+                key: interField,
+            })
+        }));
+    }
 }

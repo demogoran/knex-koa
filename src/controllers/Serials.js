@@ -6,21 +6,21 @@ import SerialsList from '../cron/SerialsList';
 class SerialsController {
     @HttpPost('/search')
     static async Search(ctx) {
-        const r = await SerialsList.find(ctx.request.body);
+        const r = await SerialsList.find(ctx.request.body.str);
         ctx.body = r;
         return ctx;
     }
 
     @HttpPost('/seasons')
     static async Seasons(ctx) {
-        const r = await SerialsList.getSeasons(ctx.request.body);
+        const r = await SerialsList.getSeasons(ctx.request.body.url);
         ctx.body = r;
         return ctx;
     }
 
     @HttpPost('/series')
     static async Series(ctx) {
-        const r = await SerialsList.getPlaylist(ctx.request.body);
+        const r = await SerialsList.getPlaylist(ctx.request.body.url);
         ctx.body = r;
         return ctx;
     }
