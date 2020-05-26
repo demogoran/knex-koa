@@ -39,15 +39,16 @@ export default () => {
                         <span className="cellValue">{tile.name}</span>
                     </Typography>
 
-                    {tile.info.map((key, value) => (<Typography>
-                        <span className="cellTitle">{key}</span>
+                    {tile.info.map((value) => (<Typography key={value}>
+                        <span className="cellTitle"></span>
                         <span className="cellValue">{value}</span>
                     </Typography>))}
 
-                    <Typography>
-                        <span className="cellTitle">Networks: </span>
-                        <span className="cellValue">{tile.networks.join('\n')}</span>
-                    </Typography>
+                    {tile.networks.map((value) => (<Typography key={value}>
+                        <span className="cellTitle"></span>
+                        <span className="cellValue"><a href={value} target="_blank">Click me</a></span>
+                    </Typography>))}
+
                     <Typography>
                         <span className="cellTitle">Age: </span>
                         <span className="cellValue">{tile.age}</span>

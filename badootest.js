@@ -85,7 +85,12 @@ const postBody = {
 
 
 let count = 0;
+let last_person_id;
 const fetchUserData = async () => {
+    //return;
+    if (last_person_id) {
+        postBody.body[0].server_get_encounters.last_person_id = last_person_id;
+    }
     const r = await axios.post(`webapi.phtml?SERVER_GET_ENCOUNTERS`, postBody);
 
     const err = r.data.body[0].server_error_message;
@@ -106,13 +111,14 @@ const fetchUserData = async () => {
             networks: (social_networks || []).map(y => y.url)
         }
     });
+    last_person_id = body.pop().user.user_id;
 
     count += newUsers.length;
-    console.log(newUsers, count);
+    console.log(last_person_id, count);
 
     //if (count >= 1000) return;
     await Badoo.upsert(newUsers, 'user_id');
-    setTimeout(fetchUserData, Math.random() * 3000);
+    setTimeout(fetchUserData, Math.random() * 500);
 }
 
 
