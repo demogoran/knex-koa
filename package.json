@@ -14,7 +14,7 @@
   "dependencies": {
     "@koa/cors": "2",
     "@mbraun/koa-decorators": "^0.0.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "knex": "^0.20.10",
     "knex-migrate": "^1.7.4",
