@@ -16,7 +16,7 @@
     "@mbraun/koa-decorators": "^0.0.4",
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
-    "knex": "^0.20.10",
+    "knex": "^2.4.0",
     "knex-migrate": "^1.7.4",
     "knex-upsert": "^0.0.4",
     "koa": "^2.11.0",
